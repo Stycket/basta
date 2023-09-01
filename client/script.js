@@ -1,5 +1,4 @@
- 
-
+import { DateTime } from 'luxon';
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -400,7 +399,7 @@ const firstDayOfWeek = startDate.weekday; // Get the day index (0-6) of the 1st 
     console.log('Selected date:', selectedDateValue);
   console.log('Selected time slots:', selectedTimeSlots);
   
-    const response = await fetch('https://6219-2a00-801-703-2b1b-f0f1-441b-b075-5c37.ngrok-free.app/api/book', {
+    const response = await fetch('http://localhost:3000/api/book', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -430,7 +429,7 @@ window.addEventListener('DOMContentLoaded', async () => {
   const messageBox = document.querySelector('#messageBoxId');
 
   try {
-    const response = await fetch('https://6219-2a00-801-703-2b1b-f0f1-441b-b075-5c37.ngrok-free.app/api/booked');
+    const response = await fetch('http://localhost:3000/api/booked');
     const data = await response.json();
 
     if (data.success) {
